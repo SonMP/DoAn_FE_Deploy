@@ -1,0 +1,168 @@
+$primary-green: #007f5f;
+$text-blue: #0056b3; // Màu xanh dương cho tiêu đề bài viết
+$text-gray: #666;
+$bg-date: #506673; // Màu nền xám xanh cho date badge (như ảnh mẫu)
+
+.section-share.section-service {
+    padding: 30px 0;
+    background-color: #fff;
+    border-top: 1px solid #f1f1f1;
+
+    .section-container {
+        width: 100%;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        @media (max-width: 1200px) {
+            max-width: 960px;
+        }
+
+        @media (max-width: 992px) {
+            max-width: 720px;
+        }
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 30px;
+
+        .title-section {
+            font-size: 24px;
+            font-weight: 700;
+            color: $primary-green;
+            text-transform: uppercase;
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 3px;
+                background: $primary-green;
+                margin: 10px auto 0;
+            }
+        }
+    }
+
+    .section-body {
+        .service-card {
+            padding: 0 10px; // Khoảng cách giữa các slide
+
+            .card-inner {
+                background: #fff;
+                cursor: pointer;
+                transition: transform 0.3s;
+
+                &:hover {
+                    .card-content .card-title {
+                        color: $primary-green;
+                    }
+                }
+
+                // 1. Phần Ảnh & Date Badge
+                .card-top {
+                    position: relative; // Để badge absolute theo thằng này
+                    overflow: hidden;
+                    border-radius: 4px;
+
+                    .bg-image {
+                        width: 100%;
+                        height: 200px;
+                        background-size: cover;
+                        background-position: center;
+                        transition: transform 0.5s;
+                    }
+
+                    // Hiệu ứng zoom ảnh khi hover
+                    &:hover .bg-image {
+                        transform: scale(1.05);
+                    }
+
+                    // Cục ngày tháng (Date Badge)
+                    .date-badge {
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                        background-color: $bg-date;
+                        color: #fff;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%; // Hình tròn
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                        z-index: 2;
+
+                        .day {
+                            font-size: 16px;
+                            font-weight: 700;
+                            line-height: 1;
+                        }
+
+                        .month {
+                            font-size: 11px;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+
+                // 2. Phần Nội dung
+                .card-content {
+                    padding: 15px 0;
+                    text-align: center;
+
+                    .card-title {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: $text-blue; // Màu xanh dương đậm
+                        margin-bottom: 10px;
+                        line-height: 1.4;
+                        height: 44px; // Giới hạn 2 dòng
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+
+                    .card-desc {
+                        font-size: 13px;
+                        color: $text-gray;
+                        line-height: 1.5;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        // Custom nút Next/Prev
+        .slick-prev,
+        .slick-next {
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+
+            &::before {
+                color: #ccc;
+                font-size: 30px;
+            }
+
+            &:hover::before {
+                color: $primary-green;
+            }
+        }
+
+        .slick-prev {
+            left: -30px;
+        }
+
+        .slick-next {
+            right: -30px;
+        }
+    }
+}

@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// --- VARIABLES ---
+$primary-color: #007f5f;
+$primary-dark: #005f46;
+$accent-color: #ffc107;
+$text-color: #2d3436;
+$text-light: #636e72;
+$bg-body: #f0f2f5;
+$white: #ffffff;
+$shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+.doctor-detail-container {
+    font-family: 'Poppins', sans-serif;
+    background-color: $bg-body;
+    min-height: 100vh;
+    padding-bottom: 50px;
+
+    // --- 1. HERO HEADER ---
+    .doctor-hero-section {
+        background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+        padding: 40px 0 100px 0; // Padding bottom lớn để tạo khoảng trống cho phần body đè lên
+        color: $white;
+        position: relative;
+
+        &::after {
+            // Họa tiết trang trí mờ
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+
+            .hero-avatar {
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                background-position: center top;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border: 5px solid rgba(255, 255, 255, 0.3);
+                background-color: #ffffff;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                flex-shrink: 0;
+            }
+
+            .hero-info {
+                .doctor-name {
+                    font-size: 32px;
+                    font-weight: 700;
+                    margin-bottom: 15px;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+
+                .doctor-desc {
+                    font-size: 16px;
+                    opacity: 0.9;
+                    margin-bottom: 25px;
+                    max-width: 700px;
+                    line-height: 1.6;
+                    font-weight: 300;
+                }
+
+                .hero-actions {
+                    display: flex;
+                    gap: 15px;
+
+                    .btn-action {
+                        padding: 12px 25px;
+                        border-radius: 50px;
+                        border: none;
+                        font-size: 15px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        transition: transform 0.2s, box-shadow 0.2s;
+
+                        i {
+                            font-size: 16px;
+                        }
+
+                        &:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                        }
+                    }
+
+                    .btn-booking {
+                        background-color: $white;
+                        color: $primary-color;
+                    }
+
+                    .btn-message {
+                        background-color: rgba(255, 255, 255, 0.15);
+                        color: $white;
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+                        backdrop-filter: blur(5px);
+
+                        &:hover {
+                            background-color: rgba(255, 255, 255, 0.25);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // --- 2. BODY SECTION ---
+    .doctor-body-section {
+        margin-top: -60px; // Đẩy lên để đè vào Header (Hiệu ứng Overlap)
+        position: relative;
+        z-index: 2;
+
+        .body-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr; // Cột trái 350px, Cột phải tự dãn
+            gap: 30px;
+
+            // COMPONENT CHUNG CHO CÁC CARD
+            .content-card {
+                background: $white;
+                border-radius: 16px;
+                box-shadow: $shadow-card;
+                padding: 25px;
+                margin-bottom: 30px;
+                border: 1px solid rgba(0, 0, 0, 0.02);
+            }
+
+            // --- CỘT TRÁI ---
+            .left-column {
+                .schedule-card {
+                    // Style riêng cho card chứa lịch (nếu cần)
+                    min-height: 300px;
+                }
+
+                .clinic-info-card {
+                    .card-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: $text-color;
+                        margin-bottom: 15px;
+                        padding-bottom: 10px;
+                        border-bottom: 1px solid #eee;
+
+                        i {
+                            color: $primary-color;
+                        }
+                    }
+
+                    .clinic-address {
+                        h4 {
+                            font-size: 15px;
+                            font-weight: 600;
+                            margin-bottom: 5px;
+                            color: $primary-dark;
+                        }
+
+                        p {
+                            font-size: 14px;
+                            color: $text-light;
+                            line-height: 1.5;
+                        }
+                    }
+
+                    .clinic-price-preview {
+                        margin-top: 20px;
+                        background-color: #f9f9f9;
+                        padding: 15px;
+                        border-radius: 8px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 14px;
+
+                        .price {
+                            font-weight: 700;
+                            color: $accent-color;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+
+            // --- CỘT PHẢI ---
+            .right-column {
+                .detail-card {
+                    min-height: 500px;
+
+                    .card-header-simple {
+                        margin-bottom: 25px;
+
+                        h3 {
+                            font-size: 20px;
+                            font-weight: 700;
+                            color: $primary-color;
+                            position: relative;
+                            display: inline-block;
+
+                            &::after {
+                                content: '';
+                                display: block;
+                                width: 40px;
+                                height: 4px;
+                                background-color: $accent-color;
+                                border-radius: 2px;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+
+                    .markdown-content {
+                        color: $text-color;
+                        line-height: 1.8;
+                        font-size: 15px;
+
+                        // Reset style cho ảnh trong HTML content để nó không bị tràn
+                        img {
+                            max-width: 100%;
+                            height: auto;
+                            border-radius: 8px;
+                            margin: 10px 0;
+                        }
+
+                        p {
+                            margin-bottom: 15px;
+                        }
+
+                        ul,
+                        ol {
+                            padding-left: 20px;
+                            margin-bottom: 15px;
+                        }
+                    }
+
+                    .no-data {
+                        color: #999;
+                        font-style: italic;
+                        text-align: center;
+                        padding: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MOBILE RESPONSIVE
+@media (max-width: 992px) {
+    .doctor-detail-container {
+        .doctor-hero-section {
+            padding: 30px 0 80px 0;
+
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+
+                .hero-info {
+                    .hero-actions {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+
+        .doctor-body-section {
+            .body-grid {
+                grid-template-columns: 1fr; // Chuyển thành 1 cột trên mobile
+
+                // Đảo thứ tự trên mobile nếu muốn (VD: đưa chi tiết lên trước lịch)
+                // .left-column { order: 2; } 
+                // .right-column { order: 1; }
+            }
+        }
+    }
+}

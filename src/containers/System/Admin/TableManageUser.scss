@@ -1,0 +1,174 @@
+$primary-color: #007f5f;
+
+.users-table-container {
+    padding: 20px 0;
+
+    .users-table-wrapper {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    #customers {
+        font-family: 'Segoe UI', sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+
+        thead {
+            tr {
+                background-color: $primary-color;
+                color: white;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+
+                th {
+                    padding: 16px;
+                    font-weight: 600;
+                    border: none;
+                    font-size: 14px;
+                    text-align: left;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                border-bottom: 1px solid #f0f0f0;
+                transition: all 0.2s ease-in-out;
+
+                td {
+                    padding: 14px 16px;
+                    color: #555;
+                    font-size: 14px;
+                    vertical-align: middle;
+                }
+
+                &:hover {
+                    background-color: #f8fffc;
+                    transform: scale(1.005);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+                    z-index: 10;
+                    position: relative;
+                    cursor: default;
+                }
+
+                &:nth-child(even) {
+                    background-color: #fcfcfc;
+
+                    &:hover {
+                        background-color: #f8fffc;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn-action {
+        border: none;
+        background: transparent;
+        padding: 8px 12px;
+        border-radius: 8px;
+        margin: 0 5px;
+        transition: all 0.3s;
+        cursor: pointer;
+        font-size: 16px;
+
+        &.btn-edit {
+            color: #ffa502;
+            background: rgba(255, 165, 2, 0.1);
+
+            &:hover {
+                background: #ffa502;
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 10px rgba(255, 165, 2, 0.4);
+            }
+        }
+
+        &.btn-delete {
+            color: #ff4757;
+            background: rgba(255, 71, 87, 0.1);
+
+            &:hover {
+                background: #ff4757;
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 10px rgba(255, 71, 87, 0.4);
+            }
+        }
+    }
+
+    .react-paginate-container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 5px;
+            align-items: center;
+
+            .page-item {
+                .page-link {
+                    border: none;
+                    background: #f1f1f1;
+                    color: #333;
+                    padding: 8px 14px;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    text-decoration: none;
+                    display: block;
+
+                    &:hover {
+                        background: #d4d4d4;
+                    }
+                }
+
+                &.active {
+                    .page-link {
+                        background-color: #04AA6D;
+                        color: white;
+                        box-shadow: 0 4px 10px rgba(4, 170, 109, 0.3);
+                    }
+                }
+
+                &.previous,
+                &.next {
+                    .page-link {
+                        background: transparent;
+                        color: #04AA6D;
+                        border: 1px solid #04AA6D;
+
+                        &:hover {
+                            background: #04AA6D;
+                            color: white;
+                        }
+                    }
+                }
+
+                &.disabled {
+                    .page-link {
+                        color: #ccc;
+                        border-color: #ccc;
+                        cursor: not-allowed;
+
+                        &:hover {
+                            background: transparent;
+                            color: #ccc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+$primary-color: #007f5f;
+$accent-color: #ffc107;
+$text-dark: #333;
+$text-gray: #666;
+$bg-light: #f8f9fa;
+$white: #fff;
+
+.doctor-schedule-container {
+    font-family: 'Montserrat', sans-serif;
+    padding-right: 15px;
+
+    .all-schedule {
+        margin-bottom: 25px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+
+        .text-calendar {
+            font-size: 14px;
+            font-weight: 600;
+            color: $text-dark;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            i {
+                color: $primary-color;
+                font-size: 16px;
+            }
+        }
+
+        .time-select-container {
+            position: relative;
+            width: 200px;
+
+            select {
+                width: 100%;
+                padding: 10px 15px;
+                border: 2px solid #e0e0e0;
+                border-radius: 8px;
+                background-color: $white;
+                font-size: 15px;
+                color: $primary-color;
+                font-weight: 600;
+                cursor: pointer;
+                appearance: none;
+                outline: none;
+                transition: all 0.3s;
+
+                &:hover,
+                &:focus {
+                    border-color: $primary-color;
+                    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+                }
+            }
+
+            .select-icon {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: $primary-color;
+                pointer-events: none;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .all-available-time {
+        .text-calendar {
+            font-size: 13px;
+            font-weight: 600;
+            color: $text-gray;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            i {
+                color: $primary-color;
+            }
+        }
+
+        .time-content-btns {
+
+            .btns-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+
+                button {
+                    background-color: $white;
+                    border: 1px solid #e0e0e0;
+                    color: $text-dark;
+                    padding: 10px 20px;
+                    border-radius: 50px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+                    width: 100%;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+                    &.btn-en {
+                        font-size: 11px;
+                        padding: 10px 2px;
+                    }
+
+                    &:hover {
+                        background-color: $primary-color;
+                        color: $white;
+                        border-color: $primary-color;
+                        transform: translateY(-2px);
+                        box-shadow: 0 5px 15px rgba($primary-color, 0.3);
+                    }
+
+                }
+            }
+
+            .book-free {
+                margin-top: 20px;
+                font-size: 13px;
+                color: $text-gray;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    i {
+                        animation: bounce 1s infinite;
+                    }
+                }
+            }
+
+            .no-schedule {
+                padding: 20px;
+                background-color: #fff3cd;
+                color: #856404;
+                border-radius: 8px;
+                border: 1px solid #ffeeba;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                i {
+                    font-size: 18px;
+                }
+            }
+
+            .disabled-btn {
+                background-color: #e0e0e0 !important;
+                color: #999 !important;
+                cursor: not-allowed !important;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 768px) {
+    .doctor-schedule-container {
+        padding-right: 0;
+        margin-top: 20px;
+
+        .all-schedule {
+            .time-select-container {
+                width: 100%;
+            }
+        }
+
+        .all-available-time {
+            .time-content-btns {
+                .btns-grid {
+                    button {
+                        width: calc(50% - 6px);
+                        min-width: auto;
+                    }
+                }
+            }
+        }
+    }
+}

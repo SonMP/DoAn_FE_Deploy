@@ -1,0 +1,217 @@
+$brand-primary: #007f5f;
+$brand-hover: #00664c;
+$bg-light: #f1fcf5;
+$text-main: #1f3b33;
+$border-color: #dbebe6;
+$white: #ffffff;
+$input-focus-shadow: rgba(0, 127, 95, 0.25);
+
+.manage-doctor-container {
+    padding: 20px 30px;
+    background-color: $bg-light !important;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+
+
+    .manage-doctor-title {
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: 700;
+        color: $brand-primary !important;
+        margin-bottom: 30px;
+        text-align: center;
+        letter-spacing: 0.5px;
+    }
+
+    .doctor-list-section,
+    .doctor-detail-section {
+        background: $white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(31, 59, 51, 0.08);
+        border: 1px solid $border-color;
+        padding: 25px;
+        margin-bottom: 30px;
+
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: $text-main;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid $bg-light;
+
+            i {
+                color: $brand-primary !important;
+                margin-right: 10px;
+                font-size: 20px;
+            }
+        }
+
+        .table-responsive {
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid $border-color;
+
+            .table {
+                margin-bottom: 0;
+                width: 100%;
+
+                thead {
+                    tr {
+                        th {
+                            background-color: $brand-primary !important;
+                            color: $white !important;
+                            border: none;
+                            padding: 14px 15px;
+                            text-align: center;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        border-bottom: 1px solid $border-color;
+
+                        &:hover {
+                            background-color: #e6f7f0 !important;
+                        }
+
+                        td {
+                            padding: 12px 15px;
+                            vertical-align: middle;
+                            color: $text-main;
+
+                            .btn-edit {
+                                background-color: $white;
+                                border: 1px solid $brand-primary !important;
+                                color: $brand-primary !important;
+                                padding: 6px 16px;
+                                border-radius: 50px;
+                                font-weight: 600;
+                                cursor: pointer;
+                                transition: all 0.2s;
+
+                                &:hover {
+                                    background-color: $brand-primary !important;
+                                    color: $white !important;
+                                    box-shadow: 0 4px 6px rgba(0, 127, 95, 0.2);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+
+        label {
+            font-weight: 600;
+            color: $text-main;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            height: 38px;
+            color: $text-main;
+
+            &:focus {
+                border-color: $brand-primary !important;
+                box-shadow: 0 0 0 0.2rem $input-focus-shadow !important;
+                outline: none;
+            }
+        }
+    }
+
+    .manage-doctor-editor {
+        .rc-md-editor {
+            border: 1px solid $border-color;
+
+            .rc-md-navigation {
+                background-color: $bg-light !important;
+            }
+        }
+    }
+
+    .btn-save-infor {
+        background-color: $brand-primary !important;
+        border-color: $brand-primary !important;
+        color: $white !important;
+
+        padding: 10px 24px;
+        font-weight: 600;
+        font-size: 15px;
+        border-radius: 6px;
+        float: right;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: $brand-hover !important;
+            border-color: $brand-hover !important;
+            box-shadow: 0 4px 12px rgba(0, 127, 95, 0.3);
+            transform: translateY(-2px);
+        }
+
+        &.is-edit {
+            background-color: #f39c12 !important;
+            border-color: #f39c12 !important;
+
+            &:hover {
+                background-color: #d68910 !important;
+                border-color: #d68910 !important;
+            }
+        }
+    }
+
+    .input-group {
+        display: flex;
+        align-items: stretch;
+
+        .form-control {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: none;
+
+            &:focus {
+                z-index: 3;
+            }
+        }
+
+        .input-group-append {
+            .input-group-text {
+                background-color: #f1fcf5;
+                border: 1px solid #ced4da;
+                border-left: none;
+                color: $brand-primary;
+                font-weight: 600;
+                padding: 0 12px;
+                display: flex;
+                align-items: center;
+                height: 38px;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+        }
+
+        &:focus-within {
+            .input-group-text {
+                border-color: $brand-primary !important;
+            }
+        }
+    }
+
+    .clearfix {
+        clear: both;
+    }
+}

@@ -1,0 +1,334 @@
+// --- BẢNG MÀU XANH LÁ (Chuẩn BV Bình Dân Đà Nẵng) ---
+$brand-primary: #007f5f;
+$brand-accent: #20c997;
+$brand-hover: #00664c;
+$bg-light: #f1fcf5;
+$text-main: #1f3b33;
+$border-color: #dbebe6;
+$white: #ffffff;
+
+.users-container {
+    padding: 20px 30px;
+    background-color: #f7fcf9;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+
+
+    .title {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: $brand-primary;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: relative;
+        text-align: center;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, $brand-primary, $brand-accent);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+    }
+
+    .btn-primary {
+        background-color: $brand-primary;
+        border: none;
+        padding: 10px 20px;
+        font-weight: 500;
+        border-radius: 6px;
+        transition: all 0.3s;
+        box-shadow: 0 4px 10px rgba(0, 127, 95, 0.2);
+        height: 100%;
+
+        &:hover {
+            background-color: $brand-hover;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 127, 95, 0.3);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+
+        i {
+            margin-right: 8px;
+        }
+    }
+
+    .users-table {
+        margin-top: 25px;
+        background: $white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid $border-color;
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers {
+
+            th {
+                background: linear-gradient(45deg, $brand-primary, #009c75);
+                color: $white;
+                text-align: left;
+                padding: 18px 15px;
+                font-weight: 600;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            td {
+                border-bottom: 1px solid $border-color;
+                padding: 16px 15px;
+                color: $text-main;
+                font-size: 14px;
+                vertical-align: middle;
+            }
+
+            tr {
+                transition: background-color 0.2s;
+
+                &:hover {
+                    background-color: $bg-light;
+                }
+            }
+
+            tr:last-child td {
+                border-bottom: none;
+            }
+        }
+
+        .role-admin {
+            color: #d63384;
+            background-color: #fcebf3;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .role-doctor {
+            color: $brand-primary;
+            background-color: rgba($brand-primary, 0.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px solid rgba($brand-primary, 0.2);
+        }
+
+        .role-user {
+            color: #fd7e14;
+            background-color: #fff3e6;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .btn-edit {
+            color: #0ca678;
+            background: rgba(12, 166, 120, 0.1);
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: all 0.2s;
+
+            &:hover {
+                background: #0ca678;
+                color: white;
+            }
+        }
+
+        .btn-delete {
+            color: #fa5252;
+            background: rgba(250, 82, 82, 0.1);
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:hover {
+                background: #fa5252;
+                color: white;
+            }
+        }
+    }
+}
+
+
+
+.modal-user-container {
+
+    .modal-content {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+
+        .modal-header {
+            background: linear-gradient(45deg, $brand-primary, #009c75);
+            ;
+            color: $white;
+            height: 3.5rem !important;
+            ;
+            border-bottom: none;
+            padding: 15px 25px;
+            align-items: center;
+
+            .modal-title {
+                font-weight: 700 !important;
+                ;
+                text-transform: uppercase !important;
+                ;
+                letter-spacing: 0.5px !important;
+                ;
+                font-size: 1.5rem !important;
+                ;
+            }
+
+            .close,
+            .btn-close {
+                background-color: transparent !important;
+                border: none !important;
+
+                color: $white;
+                text-shadow: none;
+                opacity: 0.7;
+                font-size: 2.5rem;
+                padding: 1rem;
+                margin: -1rem -1rem -1rem auto;
+                transition: opacity 0.2s ease;
+
+                &:hover {
+                    opacity: 1;
+                    color: $white;
+                    background-color: transparent !important;
+                }
+
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .modal-body {
+            padding: 25px;
+            background-color: $white;
+
+            .modal-user-body {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                .input-container {
+                    width: 47%;
+                    display: flex;
+                    flex-direction: column;
+
+                    &.max-width-input {
+                        width: 100%;
+                    }
+
+                    label {
+                        font-weight: 600;
+                        color: $text-main;
+                        font-size: 0.9rem;
+                        margin-bottom: 8px;
+                    }
+
+                    .form-control {
+                        height: 45px;
+                        border-radius: 8px;
+                        border: 1px solid $border-color;
+                        padding: 10px 15px;
+                        font-size: 0.95rem;
+                        transition: all 0.2s ease-in-out;
+                        background-color: #fbfdfc;
+
+                        &::placeholder {
+                            color: #aab2b8;
+                            font-size: 0.9rem;
+                        }
+
+                        &:focus {
+                            border-color: $brand-accent;
+                            background-color: $white;
+                            box-shadow: 0 0 0 3px rgba($brand-accent, 0.15);
+                        }
+                    }
+
+                    input:disabled {
+                        background-color: #e9ecef;
+                        color: #6c757d;
+                        cursor: not-allowed;
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+
+        .modal-footer {
+            background-color: $bg-light;
+            border-top: 1px solid $border-color;
+            padding: 15px 25px;
+
+            .btn {
+                padding: 10px 24px;
+                font-weight: 600;
+                border-radius: 6px;
+                font-size: 0.9rem;
+                transition: all 0.2s ease;
+                border: none;
+                height: 100%;
+
+                &.btn-primary {
+                    background-color: $brand-primary;
+                    box-shadow: 0 4px 6px rgba($brand-primary, 0.2);
+
+                    &:hover {
+                        background-color: $brand-hover;
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 8px rgba($brand-primary, 0.3);
+                    }
+
+                    &:active {
+                        transform: translateY(0);
+                    }
+                }
+
+                &.btn-secondary {
+                    background-color: #e9ecef;
+                    color: $text-main;
+                    height: 100%;
+
+                    &:hover {
+                        background-color: darken(#e9ecef, 5%);
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-user-container .modal-body .modal-user-body .input-container {
+        width: 100% !important;
+    }
+}

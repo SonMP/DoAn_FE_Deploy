@@ -1,0 +1,187 @@
+$primary-green: #007f5f;
+$light-green: #20c997;
+$text-color: #333;
+$bg-gray: #f5f5f5;
+
+.section-share.section-outstanding-doctor {
+    padding: 30px 0;
+    background-color: #fff;
+
+    .section-container {
+        width: 100%;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        @media (max-width: 1200px) {
+            max-width: 960px;
+        }
+
+        @media (max-width: 992px) {
+            max-width: 720px;
+        }
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .title-section {
+            font-size: 22px;
+            font-weight: 600;
+            color: $text-color;
+        }
+
+        .btn-section {
+            border: none;
+            padding: 10px 15px;
+            text-transform: uppercase;
+            background: #ebebeb;
+            color: $text-color;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: all 0.2s;
+
+            &:hover {
+                background: $primary-green;
+                color: #fff;
+            }
+        }
+    }
+
+    .section-body {
+
+        .slick-list {
+            margin: 0 -10px;
+            padding: 10px 0;
+        }
+
+        .doctor-card-wrapper {
+            padding: 0 10px;
+
+            .doctor-card-content {
+                // border: 1px solid #dfe6e9;
+                padding: 20px 10px;
+                border-radius: 10px;
+                // background: #fff;
+                // background: linear-gradient(180deg, #ffffff 30%, #e0f2f1 100%);
+
+                // Thêm border mỏng tiệp màu để thẻ sắc nét hơn
+                // border: 1px solid #b2dfdb;
+                cursor: pointer;
+                background: linear-gradient(180deg, #ffffff 30%, #e0f2f1 100%);
+
+                // Thêm border mỏng tiệp màu để thẻ sắc nét hơn
+                border: 1px solid #b2dfdb;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    border-color: $light-green;
+                    transform: translateY(-5px);
+                    box-shadow: 0 5px 15px rgba(0, 127, 95, 0.15);
+
+                    .doctor-name {
+                        color: $primary-green;
+                    }
+                }
+
+                .outer-bg {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 15px;
+
+                    .section-doctor-bg {
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 50%;
+                        background-position: center top;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        border: 2px solid $bg-gray;
+                    }
+                }
+
+                .position {
+                    text-align: center;
+
+                    .doctor-name {
+                        font-size: 15px;
+                        font-weight: 700;
+                        color: $text-color;
+                        margin-bottom: 5px;
+                        transition: color 0.2s;
+                    }
+
+                    .doctor-specialty {
+                        font-size: 13px;
+                        color: #666;
+                        margin-bottom: 15px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: block;
+                    }
+
+                    .action-btn {
+                        .btn-booking {
+                            border: 1px solid #b2dfdb;
+                            background-color: #f1fcf5;
+                            color: $primary-green;
+                            padding: 8px 20px;
+                            border-radius: 20px;
+                            font-weight: 600;
+                            font-size: 13px;
+                            cursor: pointer;
+                            transition: all 0.2s;
+
+                            &:hover {
+                                background-color: $primary-green;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .slick-prev,
+        .slick-next {
+            z-index: 100;
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border: 1px solid #d3d3d3;
+            border-radius: 50%;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+
+            &::before {
+                font-size: 20px;
+                color: #444;
+                opacity: 1;
+            }
+
+            &:hover {
+                background: $primary-green;
+                border-color: $primary-green;
+
+                &::before {
+                    color: #fff;
+                }
+            }
+        }
+
+        .slick-prev {
+            left: -15px;
+        }
+
+        .slick-next {
+            right: -15px;
+        }
+    }
+}

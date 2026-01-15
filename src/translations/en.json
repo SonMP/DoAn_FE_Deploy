@@ -1,0 +1,136 @@
+{
+    "header": {
+        "hotline": "Emergency Hotline:",
+        "opening_hours": "7:00 - 17:00 (Mon - Sat)",
+        "login": "Login",
+        "register": "Register",
+        "logout": "Logout",
+        "about": "About Us",
+        "about_sub": "General Information",
+        "specialty": "Specialty",
+        "search_doctor": "Find a doctor by specialty",
+        "service": "Services",
+        "service_desc": "Health check, Testing",
+        "search_booking": "Look up",
+        "manage_booking": "Manage appointment",
+        "doctor": "Doctors",
+        "select_doctor": "Qualified specialists",
+        "fee": "Checkup Packages",
+        "check_health": "General health check",
+        "support": "Support",
+        "welcome": "Welcome",
+        "booking": "Booking now",
+        "manage": "System",
+        "pro_specialty": "Team of outstanding doctors",
+        "view_detail": "View detail",
+        "detail-doctor.schedule": "Medical examination schedule",
+        "detail-doctor.available-time": "Time slot is empty",
+        "detail-doctor.no-schedule": "The doctor doesn't have an appointment today; please choose another day.",
+        "detail-doctor.choose": "Choose",
+        "detail-doctor.book-free": "and book your appointment!"
+    },
+    "banner": {
+        "hospital_name": "BINH DAN GENERAL HOSPITAL DA NANG",
+        "slogan": "Leading Expertise - Compassionate Care",
+        "desc": "Providing high-quality medical services with a team of experienced experts and state-of-the-art equipment in the Central region.",
+        "btn_explore": "Explore More"
+    },
+    "section": {
+        "booking": "Book Appointment",
+        "book_desc": "Proactive time, no waiting",
+        "emergency": "24/7 Emergency",
+        "hotline": "Hotline: 0236.7105.888",
+        "expert_team": "Doctor Team",
+        "expert_desc": "Leading specialists",
+        "specialty_title": "Services & Specialties",
+        "view_all": "View all",
+        "outstanding_doctor": "Outstanding Doctors",
+        "btn_book_now": "Book Now",
+        "service_consultation": "Service Consultation"
+    },
+    "feedback": {
+        "title": "CUSTOMER FEEDBACK",
+        "thyroid_title": "THYROID SURGERY AT BINH DAN DA NANG",
+        "thyroid_desc": "Recently, Binh Dan Hospital Da Nang has successfully performed 52,000 thyroid surgeries with absolute safety, no fatalities, and no complications.",
+        "consulting_doctor": "SPECIALIST CONSULTATION",
+        "internal_medicine": "Internal Med - Thyroid",
+        "pediatrics": "Pediatrics",
+        "oriental_medicine": "Oriental Medicine",
+        "surgery": "Surgery",
+        "vaccination": "Vaccination"
+    },
+    "footer": {
+        "hospital_name": "BINH DAN GENERAL HOSPITAL DA NANG",
+        "address": "Address: 376 Tran Cao Van – Xuan Ha Ward, Thanh Khe Dist – Da Nang City",
+        "work_schedule": "Working Schedule: Mon – Sat",
+        "morning": "Morning: 7:30 AM – 12:00 PM",
+        "afternoon": "Afternoon: 1:00 PM – 4:30 PM",
+        "phone": "Phone: 0236 714 030",
+        "customer_care": "Customer Care: 0236 7105 888",
+        "email_sales": "Email: kinhdoanh.bvbd@gmail.com",
+        "email_hr": "HR Admin: benhvienbinhdandn@gmail.com",
+        "regulation": "OPERATING REGULATIONS",
+        "intro": "General Introduction",
+        "leadership": "Board of Directors",
+        "process": "Development History",
+        "hr_org": "HR Organization",
+        "map": "MAP",
+        "guideline": "Practice Guidelines Facility",
+        "health_check": "Periodic Health Check",
+        "product": "Products",
+        "nguu_giac_linh": "Nguu Giac Linh"
+    },
+    "menu": {
+        "system": {
+            "header": "System",
+            "system-administrator": {
+                "header": "System Administrator",
+                "user-manage": "User manage",
+                "manage-user": "User using redux"
+            },
+            "system-parameter": {
+                "header": "System-parameter"
+            }
+        },
+        "admin": {
+            "manage-user": "Users Management",
+            "crud": "Manage Users (CRUD)",
+            "crud-redux": "Manage Users",
+            "manage-doctor": "Manage Doctors",
+            "manage-admin": "Manage Admins",
+            "specialty": "Specialties Management",
+            "manage-specialty": "Manage Specialties",
+            "handbook": "Handbook Management",
+            "manage-handbook": "Manage Handbooks",
+            "ai-system": "AI Consultation System",
+            "manage-ai-data": "Manage AI Dataset",
+            "ai-history": "AI Consultation History",
+            "statistical": "Statistics",
+            "statistical-dashboard": "General Dashboard"
+        },
+        "doctor": {
+            "main-feature": "Main Features",
+            "manage-info": "Manage Profile",
+            "manage-schedule": "Manage Schedule",
+            "manage-patient": "Manage Patients",
+            "ai-consultation-result": "Patient's AI History"
+        }
+    },
+    "manage-schedule": {
+        "title": "Manage Doctor's Schedule",
+        "choose-doctor": "Select Doctor",
+        "doctor-label": "Doctor",
+        "choose-date": "Select Date",
+        "save": "Save Information",
+        "note": "Select working time slots:",
+        "no-time-data": "No time slots available (Please check Admin)",
+        "placeholder-doctor": "Select doctor...",
+        "notification": {
+            "missing-doctor": "Please select a doctor!",
+            "missing-date": "Please select a date!",
+            "missing-time": "Please select at least one time slot!",
+            "success": "Schedule saved successfully!",
+            "error": "Error saving schedule!"
+        }
+    }
+}

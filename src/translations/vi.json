@@ -1,0 +1,136 @@
+{
+    "header": {
+        "hotline": "Hotline cấp cứu:",
+        "opening_hours": "7:00 - 17:00 (Thứ 2 - Thứ 7)",
+        "login": "Đăng nhập",
+        "register": "Đăng ký",
+        "logout": "Đăng xuất",
+        "about": "Giới thiệu",
+        "about_sub": "Thông tin tổng quan",
+        "specialty": "Chuyên khoa",
+        "search_doctor": "Tìm bác sĩ theo chuyên khoa",
+        "service": "Dịch vụ",
+        "service_desc": "Khám sức khỏe, Xét nghiệm",
+        "search_booking": "Tra cứu",
+        "manage_booking": "Quản lý lịch hẹn",
+        "doctor": "Bác sĩ",
+        "select_doctor": "Bác sĩ giỏi chuyên môn",
+        "fee": "Gói khám",
+        "check_health": "Khám sức khỏe tổng quát",
+        "support": "Hỗ trợ",
+        "welcome": "Xin chào",
+        "booking": "Đặt lịch ngay",
+        "manage": "Quản lý",
+        "pro_specialty": "Đội ngũ bác sĩ ưu tú",
+        "view_detail": "Xem chi tiết",
+        "detail-doctor.schedule": "Lịch khám",
+        "detail-doctor.available-time": "Khung giờ còn trống",
+        "detail-doctor.no-schedule": "Bác sĩ không có lịch hẹn trong ngày này, vui lòng chọn ngày khác.",
+        "detail-doctor.choose": "Chọn",
+        "detail-doctor.book-free": "và đặt lịch ở đây!"
+    },
+    "banner": {
+        "hospital_name": "BỆNH VIỆN BÌNH DÂN ĐÀ NẴNG",
+        "slogan": "Chuyên môn hàng đầu - Y đức vẹn toàn",
+        "desc": "Cung cấp dịch vụ y tế chất lượng cao với đội ngũ chuyên gia giàu kinh nghiệm và trang thiết bị hiện đại bậc nhất miền Trung.",
+        "btn_explore": "Tìm hiểu thêm"
+    },
+    "section": {
+        "booking": "Đặt lịch khám",
+        "book_desc": "Chủ động thời gian, không chờ đợi",
+        "emergency": "Cấp cứu 24/7",
+        "hotline": "Hotline: 0236.7105.888",
+        "expert_team": "Đội ngũ Bác sĩ",
+        "expert_desc": "Chuyên gia đầu ngành",
+        "specialty_title": "Dịch vụ & Chuyên khoa",
+        "view_all": "Xem tất cả",
+        "outstanding_doctor": "Đội ngũ chuyên gia",
+        "btn_book_now": "Đặt lịch",
+        "service_consultation": "Tư vấn dịch vụ"
+    },
+    "feedback": {
+        "title": "PHẢN HỒI KHÁCH HÀNG",
+        "thyroid_title": "MỔ BƯỚU CỔ TẠI BÌNH DÂN ĐÀ NẴNG",
+        "thyroid_desc": "Trong thời gian qua, Bệnh viện Bình Dân Đà Nẵng đã phẫu thuật thành công 52.000 ca bướu cổ, an toàn tuyệt đối, không có tử vong, không có tai biến.",
+        "consulting_doctor": "BÁC SĨ CHUYÊN KHOA TƯ VẤN",
+        "internal_medicine": "Nội khoa - Bướu cổ",
+        "pediatrics": "Nội Nhi",
+        "oriental_medicine": "Đông Y",
+        "surgery": "Ngoại khoa",
+        "vaccination": "Tiêm chủng"
+    },
+    "footer": {
+        "hospital_name": "BỆNH VIỆN BÌNH DÂN ĐÀ NẴNG",
+        "address": "Địa chỉ: 376 Trần Cao Vân – Phường Xuân Hà, Quận Thanh Khê – TP. Đà Nẵng",
+        "work_schedule": "Lịch làm việc: Từ thứ 2 – thứ 7",
+        "morning": "Sáng: 7h30 – 12h00",
+        "afternoon": "Chiều: 13h00 – 16h30",
+        "phone": "Điện thoại: 0236 714 030",
+        "customer_care": "Chăm sóc khách hàng: 0236 7105 888",
+        "email_sales": "Email: kinhdoanh.bvbd@gmail.com",
+        "email_hr": "Hành chính nhân sự: benhvienbinhdandn@gmail.com",
+        "regulation": "QUY CHẾ HOẠT ĐỘNG",
+        "intro": "Giới thiệu chung",
+        "leadership": "Ban lãnh đạo",
+        "process": "Quá trình phát triển",
+        "hr_org": "Tổ chức nhân sự",
+        "map": "BẢN ĐỒ",
+        "guideline": "Cơ sở hướng dẫn thực hành",
+        "health_check": "Khám sức khỏe định kỳ",
+        "product": "Sản phẩm",
+        "nguu_giac_linh": "Ngưu giác linh"
+    },
+    "menu": {
+        "system": {
+            "header": "Hệ thống",
+            "system-administrator": {
+                "header": "Quản trị hệ thống",
+                "user-manage": "Quản lý người sử dụng",
+                "manage-user": "Quản lý user redux"
+            },
+            "system-parameter": {
+                "header": "Tham số hệ thống"
+            }
+        },
+        "admin": {
+            "manage-user": "Quản lý người dùng",
+            "crud": "Quản lý Người dùng (CRUD)",
+            "crud-redux": "Quản lý hồ sơ",
+            "manage-doctor": "Quản lý bác sĩ",
+            "manage-admin": "Quản lý admin",
+            "specialty": "Quản lý chuyên khoa",
+            "manage-specialty": "Quản lý chuyên khoa",
+            "handbook": "Quản lý cẩm nang",
+            "manage-handbook": "Quản lý bài viết cẩm nang",
+            "ai-system": "Hệ thống tư vấn AI",
+            "manage-ai-data": "Quản lý dữ liệu AI",
+            "ai-history": "Lịch sử tư vấn AI",
+            "statistical": "Thống kê",
+            "statistical-dashboard": "Thống kê tổng quan"
+        },
+        "doctor": {
+            "main-feature": "Chức năng chính",
+            "manage-info": "Quản lý hồ sơ",
+            "manage-schedule": "Quản lý lịch khám",
+            "manage-patient": "Quản lý bệnh nhân đặt khám",
+            "ai-consultation-result": "Lịch sử AI tư vấn cho BN"
+        }
+    },
+    "manage-schedule": {
+        "title": "Quản lý kế hoạch khám bệnh",
+        "choose-doctor": "Chọn bác sĩ",
+        "doctor-label": "Bác sĩ",
+        "choose-date": "Chọn ngày khám",
+        "save": "Lưu thông tin",
+        "note": "Chọn các khung giờ làm việc:",
+        "no-time-data": "Không có dữ liệu khung giờ (Vui lòng kiểm tra Admin)",
+        "placeholder-doctor": "Chọn bác sĩ...",
+        "notification": {
+            "missing-doctor": "Vui lòng chọn bác sĩ!",
+            "missing-date": "Vui lòng chọn ngày khám!",
+            "missing-time": "Vui lòng chọn ít nhất một khung giờ!",
+            "success": "Lưu kế hoạch thành công!",
+            "error": "Lỗi khi lưu kế hoạch!"
+        }
+    }
+}

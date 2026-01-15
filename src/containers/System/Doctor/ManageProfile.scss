@@ -1,0 +1,200 @@
+.manage-profile-container {
+    padding: 30px;
+    background-color: #f2f7f5;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    .m-p-title {
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: #00904a;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .m-p-body {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 144, 74, 0.08);
+
+        .row {
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: #4a5568;
+            display: block;
+        }
+
+        .form-control {
+            height: 45px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            padding: 10px 15px;
+            font-size: 14px;
+            color: #2d3748;
+            background-color: #fff;
+            transition: all 0.3s ease;
+
+            &:focus {
+                border-color: #00904a;
+                box-shadow: 0 0 0 3px rgba(0, 144, 74, 0.15);
+                outline: none;
+            }
+
+            &:disabled {
+                background-color: #f7fafc;
+                color: #a0aec0;
+                border-color: #edf2f7;
+                cursor: not-allowed;
+            }
+        }
+
+        textarea.form-control {
+            height: auto;
+            min-height: 100px;
+        }
+    }
+
+    .preview-img-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        height: 100%;
+
+        .label-upload {
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .preview-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 0 2px #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background-color: #f7fafc;
+
+            span {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                color: #a0aec0;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            &::after {
+                content: '\f030';
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+        }
+
+        .upload-text {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #00904a;
+            font-weight: 600;
+            transition: color 0.3s;
+
+            i {
+                margin-right: 6px;
+            }
+        }
+
+        &:hover {
+            .preview-image {
+                box-shadow: 0 0 0 3px #00904a;
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            .upload-text {
+                color: #007a3e;
+            }
+        }
+
+        input[type='file'] {
+            display: none;
+        }
+    }
+
+    .btn-save {
+        width: auto;
+        min-width: 200px;
+        padding: 20px 35px;
+        font-size: 22px;
+        font-weight: 600;
+        border-radius: 8px;
+        text-transform: uppercase;
+        background-color: #00904a;
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 144, 74, 0.2);
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            margin-right: 8px;
+        }
+
+        &:hover {
+            background-color: #007a3e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 144, 74, 0.3);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    .manage-doctor-editor {
+        .rc-md-editor {
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+
+            .rc-md-navigation {
+                background-color: #f8f9fa;
+                border-bottom: 1px solid #e2e8f0;
+            }
+        }
+    }
+}

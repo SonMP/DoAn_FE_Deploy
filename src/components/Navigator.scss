@@ -1,0 +1,204 @@
+@import "../styles/common.scss";
+
+$primary-green: #00796b;
+$dark-green: #004d40;
+$hover-green: #00695c;
+$accent-yellow: #ffca28;
+$white: #ffffff;
+$text-on-green: #e0f2f1;
+
+$navbar-height: 55px;
+$transition-speed: 0.25s;
+$shadow-menu: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+.navigator-menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: $navbar-height;
+    list-style-type: none;
+    background: linear-gradient(to right, $primary-green, $dark-green);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+
+    &.list-unstyled,
+    .list-unstyled {
+        list-style-type: none;
+    }
+
+    .menu-group {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: all $transition-speed;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-group-name {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            color: $white;
+            font-weight: 600;
+            font-size: 13.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            position: relative;
+            white-space: nowrap;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 3px;
+                background-color: $accent-yellow;
+                transition: width $transition-speed ease;
+            }
+        }
+
+        &:hover .menu-group-name::after {
+            width: 80%;
+        }
+
+        .menu-list {
+            display: none;
+            background-color: $primary-green;
+            box-shadow: $shadow-menu;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 260px;
+            padding: 0;
+            z-index: 1000;
+            animation: slideDown 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+            .menu {
+                width: 100%;
+                position: relative;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+                .menu-link {
+                    text-decoration: none;
+                    color: $text-on-green;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 14px 20px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    transition: all 0.2s;
+                    border-left: 4px solid transparent;
+
+                    &:hover {
+                        color: $accent-yellow;
+                        background-color: $dark-green;
+                        border-left: 4px solid $accent-yellow;
+                        padding-left: 24px;
+                    }
+                }
+
+                &.active .menu-link {
+                    color: $accent-yellow;
+                    font-weight: 700;
+                    background-color: $dark-green;
+                    border-left: 4px solid $accent-yellow;
+                }
+
+                .icon-right {
+                    font-size: 11px;
+                    color: rgba(255, 255, 255, 0.5);
+                    transition: transform 0.2s;
+                }
+
+                &:hover .icon-right {
+                    color: $accent-yellow;
+                    transform: translateX(5px);
+                }
+
+                .sub-menu-list {
+                    display: none;
+                    background-color: $dark-green;
+                    box-shadow: $shadow-menu;
+                    border-radius: 6px;
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    min-width: 240px;
+                    padding: 5px 0;
+                    margin-left: 5px;
+                    border-left: 3px solid $accent-yellow;
+
+                    .sub-menu {
+                        .sub-menu-link {
+                            text-decoration: none;
+                            color: $text-on-green;
+                            display: block;
+                            padding: 10px 20px;
+                            font-size: 13.5px;
+                            transition: all 0.2s;
+
+                            &:hover {
+                                color: $white;
+                                background-color: rgba(255, 255, 255, 0.1);
+                                padding-left: 25px;
+                            }
+                        }
+
+                        &.active .sub-menu-link {
+                            color: $accent-yellow;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .sub-menu-list {
+                        display: block;
+                        animation: fadeInRight 0.3s;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .menu-list {
+                display: block;
+            }
+        }
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

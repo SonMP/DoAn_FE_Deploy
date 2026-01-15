@@ -1,0 +1,236 @@
+$primary-color: #00904a;
+$text-color: #333;
+$text-grey: #666;
+$bg-light: #f8f9fa;
+$card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+.patient-history-container {
+    padding: 20px;
+    background-color: #fff;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+
+    .history-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid $bg-light;
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: $primary-color;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: $text-grey;
+        }
+    }
+
+    .history-body {
+        max-width: 900px;
+        margin: 0 auto;
+
+        .timeline {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 120px;
+                width: 2px;
+                background-color: #e9ecef;
+            }
+
+            .timeline-item {
+                display: flex;
+                margin-bottom: 40px;
+                position: relative;
+
+                .timeline-date {
+                    width: 100px;
+                    text-align: right;
+                    padding-right: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .date {
+                        font-weight: 700;
+                        font-size: 16px;
+                        color: $text-color;
+                    }
+
+                    .time {
+                        font-size: 13px;
+                        color: $text-grey;
+                    }
+                }
+
+                .timeline-marker {
+                    position: absolute;
+                    left: 114px;
+                    top: 20px;
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 50%;
+                    background-color: $primary-color;
+                    border: 3px solid #fff;
+                    box-shadow: 0 0 0 2px $primary-color;
+                    z-index: 1;
+                }
+
+                .timeline-content {
+                    flex: 1;
+                    margin-left: 40px;
+                    background-color: #fff;
+                    border-radius: 12px;
+                    padding: 20px;
+                    box-shadow: $card-shadow;
+                    border: 1px solid #eee;
+                    transition: transform 0.2s;
+
+                    &:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                        border-color: lighten($primary-color, 30%);
+                    }
+
+                    .doctor-info {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 15px;
+                        border-bottom: 1px dashed #eee;
+                        padding-bottom: 10px;
+
+                        .doctor-avatar {
+                            width: 40px;
+                            height: 40px;
+                            background-color: $bg-light;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-right: 10px;
+                            color: $primary-color;
+                            font-size: 18px;
+                        }
+
+                        .doctor-name {
+                            font-weight: 700;
+                            color: $primary-color;
+                            font-size: 16px;
+                        }
+                    }
+
+                    .diagnosis-section {
+                        margin-bottom: 15px;
+
+                        label {
+                            font-size: 13px;
+                            font-weight: 600;
+                            color: $text-grey;
+                            text-transform: uppercase;
+                            margin-bottom: 5px;
+                            display: block;
+                        }
+
+                        .diagnosis-text {
+                            font-size: 15px;
+                            color: $text-color;
+                            line-height: 1.5;
+                            background-color: $bg-light;
+                            padding: 10px;
+                            border-radius: 6px;
+                            border-left: 3px solid #fab1a0;
+                        }
+                    }
+
+                    .prescription-section {
+                        label {
+                            font-size: 13px;
+                            font-weight: 600;
+                            color: $text-grey;
+                            text-transform: uppercase;
+                            margin-bottom: 5px;
+                            display: block;
+                        }
+
+                        .prescription-image {
+                            width: 120px;
+                            height: 80px;
+                            background-color: #eee;
+                            background-size: cover;
+                            background-position: center;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            border: 1px solid #ddd;
+                            transition: opacity 0.2s;
+
+                            &:hover {
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .no-data {
+            text-align: center;
+            font-size: 18px;
+            color: $text-grey;
+            margin-top: 50px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .patient-history-container {
+        .history-body {
+            .timeline {
+                &::before {
+                    left: 20px;
+                }
+
+
+                .timeline-item {
+                    flex-direction: column;
+
+                    .timeline-date {
+                        width: 100%;
+                        text-align: left;
+                        padding-left: 40px;
+                        margin-bottom: 10px;
+                        flex-direction: row;
+                        gap: 10px;
+                        align-items: baseline;
+                    }
+
+                    .timeline-marker {
+                        left: 14px;
+                        top: 5px;
+                    }
+
+                    .timeline-content {
+                        margin-left: 0;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ReactModalPortal {
+    z-index: 9999 !important;
+
+    .ReactModal__Overlay {
+        z-index: 9999 !important;
+    }
+}
