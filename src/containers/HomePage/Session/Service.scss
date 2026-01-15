@@ -1,7 +1,7 @@
 $primary-green: #007f5f;
-$text-blue: #0056b3; // Màu xanh dương cho tiêu đề bài viết
+$text-blue: #0056b3;
 $text-gray: #666;
-$bg-date: #506673; // Màu nền xám xanh cho date badge (như ảnh mẫu)
+$bg-date: #506673;
 
 .section-share.section-service {
     padding: 30px 0;
@@ -47,7 +47,7 @@ $bg-date: #506673; // Màu nền xám xanh cho date badge (như ảnh mẫu)
 
     .section-body {
         .service-card {
-            padding: 0 10px; // Khoảng cách giữa các slide
+            padding: 0 10px;
 
             .card-inner {
                 background: #fff;
@@ -60,9 +60,9 @@ $bg-date: #506673; // Màu nền xám xanh cho date badge (như ảnh mẫu)
                     }
                 }
 
-                // 1. Phần Ảnh & Date Badge
+
                 .card-top {
-                    position: relative; // Để badge absolute theo thằng này
+                    position: relative;
                     overflow: hidden;
                     border-radius: 4px;
 
@@ -74,12 +74,12 @@ $bg-date: #506673; // Màu nền xám xanh cho date badge (như ảnh mẫu)
                         transition: transform 0.5s;
                     }
 
-                    // Hiệu ứng zoom ảnh khi hover
+
                     &:hover .bg-image {
                         transform: scale(1.05);
                     }
 
-                    // Cục ngày tháng (Date Badge)
+
                     .date-badge {
                         position: absolute;
                         top: 10px;
@@ -88,7 +88,7 @@ $bg-date: #506673; // Màu nền xám xanh cho date badge (như ảnh mẫu)
                         color: #fff;
                         width: 50px;
                         height: 50px;
-                        border-radius: 50%; // Hình tròn
+                        border-radius: 50%;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
@@ -109,7 +109,7 @@ $bg-date: #506673; // Màu nền xám xanh cho date badge (như ảnh mẫu)
                     }
                 }
 
-                // 2. Phần Nội dung
+
                 .card-content {
                     padding: 15px 0;
                     text-align: center;
@@ -117,10 +117,10 @@ $bg-date: #506673; // Màu nền xám xanh cho date badge (như ảnh mẫu)
                     .card-title {
                         font-size: 16px;
                         font-weight: 700;
-                        color: $text-blue; // Màu xanh dương đậm
+                        color: $text-blue;
                         margin-bottom: 10px;
                         line-height: 1.4;
-                        height: 44px; // Giới hạn 2 dòng
+                        height: 44px;
                         overflow: hidden;
                         display: -webkit-box;
                         -webkit-line-clamp: 2;
@@ -140,7 +140,7 @@ $bg-date: #506673; // Màu nền xám xanh cho date badge (như ảnh mẫu)
             }
         }
 
-        // Custom nút Next/Prev
+
         .slick-prev,
         .slick-next {
             z-index: 10;

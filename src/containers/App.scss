@@ -1,6 +1,6 @@
 @import "../styles/common.scss";
 
-/* File: src/styles/styles.scss (Hoặc global-toast.scss) */
+
 
 .Toastify__toast-container {
     width: 400px !important;
@@ -35,19 +35,19 @@
     }
 }
 
-/* 1. SUCCESS - Xanh Gradient */
+
 .Toastify__toast--success {
     background: linear-gradient(135deg, #00b09b 0%, #007f5f 100%) !important;
     border-left: 5px solid #a8e6cf !important;
 }
 
-/* 2. ERROR - Đỏ Cam Gradient */
+
 .Toastify__toast--error {
     background: linear-gradient(135deg, #ff5f6d 0%, #ffc371 100%) !important;
     border-left: 5px solid #ffd1d1 !important;
 }
 
-/* 3. WARNING - Vàng Gradient */
+
 .Toastify__toast--warning {
     background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%) !important;
     border-left: 5px solid #fff5c4 !important;

@@ -64,18 +64,16 @@ $bg-gray: #f5f5f5;
             padding: 0 10px;
 
             .doctor-card-content {
-                // border: 1px solid #dfe6e9;
+
                 padding: 20px 10px;
                 border-radius: 10px;
-                // background: #fff;
-                // background: linear-gradient(180deg, #ffffff 30%, #e0f2f1 100%);
 
-                // Thêm border mỏng tiệp màu để thẻ sắc nét hơn
-                // border: 1px solid #b2dfdb;
+
+
                 cursor: pointer;
                 background: linear-gradient(180deg, #ffffff 30%, #e0f2f1 100%);
 
-                // Thêm border mỏng tiệp màu để thẻ sắc nét hơn
+
                 border: 1px solid #b2dfdb;
                 transition: all 0.3s ease;
 

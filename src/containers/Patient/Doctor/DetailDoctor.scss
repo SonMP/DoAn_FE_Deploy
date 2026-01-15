@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-// --- VARIABLES ---
+
 $primary-color: #007f5f;
 $primary-dark: #005f46;
 $accent-color: #ffc107;
@@ -16,15 +16,15 @@ $shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
     min-height: 100vh;
     padding-bottom: 50px;
 
-    // --- 1. HERO HEADER ---
+
     .doctor-hero-section {
         background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
-        padding: 40px 0 100px 0; // Padding bottom lớn để tạo khoảng trống cho phần body đè lên
+        padding: 40px 0 100px 0;
         color: $white;
         position: relative;
 
         &::after {
-            // Họa tiết trang trí mờ
+
             content: '';
             position: absolute;
             top: 0;
@@ -119,18 +119,18 @@ $shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
     }
 
-    // --- 2. BODY SECTION ---
+
     .doctor-body-section {
-        margin-top: -60px; // Đẩy lên để đè vào Header (Hiệu ứng Overlap)
+        margin-top: -60px;
         position: relative;
         z-index: 2;
 
         .body-grid {
             display: grid;
-            grid-template-columns: 350px 1fr; // Cột trái 350px, Cột phải tự dãn
+            grid-template-columns: 350px 1fr;
             gap: 30px;
 
-            // COMPONENT CHUNG CHO CÁC CARD
+
             .content-card {
                 background: $white;
                 border-radius: 16px;
@@ -140,10 +140,10 @@ $shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
                 border: 1px solid rgba(0, 0, 0, 0.02);
             }
 
-            // --- CỘT TRÁI ---
+
             .left-column {
                 .schedule-card {
-                    // Style riêng cho card chứa lịch (nếu cần)
+
                     min-height: 300px;
                 }
 
@@ -198,7 +198,7 @@ $shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
                 }
             }
 
-            // --- CỘT PHẢI ---
+
             .right-column {
                 .detail-card {
                     min-height: 500px;
@@ -230,7 +230,7 @@ $shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
                         line-height: 1.8;
                         font-size: 15px;
 
-                        // Reset style cho ảnh trong HTML content để nó không bị tràn
+
                         img {
                             max-width: 100%;
                             height: auto;
@@ -261,7 +261,7 @@ $shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
 }
 
-// MOBILE RESPONSIVE
+
 @media (max-width: 992px) {
     .doctor-detail-container {
         .doctor-hero-section {
@@ -282,11 +282,11 @@ $shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
 
         .doctor-body-section {
             .body-grid {
-                grid-template-columns: 1fr; // Chuyển thành 1 cột trên mobile
+                grid-template-columns: 1fr;
 
-                // Đảo thứ tự trên mobile nếu muốn (VD: đưa chi tiết lên trước lịch)
-                // .left-column { order: 2; } 
-                // .right-column { order: 1; }
+
+
+
             }
         }
     }

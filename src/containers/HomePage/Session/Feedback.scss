@@ -1,5 +1,5 @@
 $primary-green: #007f5f;
-$light-blue-bg: #e6f7ff; // Nền xanh nhạt cho khối bên phải
+$light-blue-bg: #e6f7ff;
 $text-color: #333;
 $border-color: #eee;
 
@@ -34,7 +34,7 @@ $border-color: #eee;
                         background: #f9f9f9;
                         padding: 0 15px;
                         position: relative;
-                        top: -12px; // Kéo chữ lên đè lên đường kẻ
+                        top: -12px;
                         font-weight: 700;
                         color: $primary-green;
                         text-transform: uppercase;
@@ -43,7 +43,7 @@ $border-color: #eee;
 
                 .feedback-list {
                     display: grid;
-                    grid-template-columns: 1fr 1fr; // Chia 2 cột
+                    grid-template-columns: 1fr 1fr;
                     gap: 20px;
 
                     @media (max-width: 768px) {
@@ -92,7 +92,6 @@ $border-color: #eee;
                 }
             }
 
-            // --- CỘT PHẢI (35%) ---
             .right-content {
                 flex: 3.5;
                 display: flex;
@@ -100,7 +99,7 @@ $border-color: #eee;
                 gap: 20px;
 
                 .info-box {
-                    background: $light-blue-bg; // Nền xanh nhạt
+                    background: $light-blue-bg;
                     padding: 15px;
                     border-radius: 5px;
                     border: 1px solid #b3e5fc;
@@ -108,7 +107,7 @@ $border-color: #eee;
                     .box-title {
                         font-size: 14px;
                         font-weight: 700;
-                        color: #0277bd; // Xanh dương đậm
+                        color: #0277bd;
                         text-transform: uppercase;
                         margin-bottom: 10px;
                         text-align: center;
@@ -117,12 +116,12 @@ $border-color: #eee;
                             background: #0277bd;
                             color: #fff;
                             padding: 5px;
-                            margin: -15px -15px 15px -15px; // Full viền trên
+                            margin: -15px -15px 15px -15px;
                             border-radius: 5px 5px 0 0;
                         }
                     }
 
-                    // Khối mổ bướu cổ
+
                     &.surgery-box {
                         .box-desc {
                             font-size: 13px;
@@ -139,9 +138,9 @@ $border-color: #eee;
                         }
                     }
 
-                    // Khối danh sách bác sĩ
+
                     &.doctor-list-box {
-                        background: #e0f2f1; // Nền xanh ngọc nhạt hơn chút
+                        background: #e0f2f1;
                         border-color: #b2dfdb;
 
                         .list-doctors {
@@ -163,7 +162,7 @@ $border-color: #eee;
 
                                 .dr-name {
                                     font-weight: 600;
-                                    color: #d32f2f; // Màu đỏ cho số điện thoại
+                                    color: #d32f2f;
                                     background: #fff;
                                     padding: 2px 5px;
                                     border-radius: 3px;

@@ -148,8 +148,8 @@ $radius: 6px;
 
                 &:disabled,
                 &[readonly] {
-                    background-color: #e2e6ea !important; // Màu tối hơn $input-bg một chút
-                    color: #999 !important; // Chữ chìm đi
+                    background-color: #e2e6ea !important;
+                    color: #999 !important;
                     cursor: not-allowed;
                     font-weight: 500;
 
