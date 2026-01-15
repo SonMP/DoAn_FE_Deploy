@@ -17,6 +17,16 @@ class Login extends Component {
         }
     }
 
+    componentDidMount() {
+        let rememberEmail = localStorage.getItem('rememberEmail');
+        if (rememberEmail) {
+            this.setState({
+                username: rememberEmail,
+                rememberMe: true
+            });
+        }
+    }
+
     handleOnChangeInput = (event, id) => {
         this.setState({
             [id]: event.target.value,
@@ -45,6 +55,14 @@ class Login extends Component {
                 })
 
             } else {
+
+                // Handle Remember Me
+                if (this.state.rememberMe) {
+                    localStorage.setItem('rememberEmail', this.state.username);
+                } else {
+                    localStorage.removeItem('rememberEmail');
+                }
+
                 this.props.userLoginSuccess(data.user, data.token);
                 if (data.user.maVaiTro === 'R3') {
                     if (this.props.history) {
@@ -148,7 +166,7 @@ class Login extends Component {
                                     />
                                     <label htmlFor="rememberMeCheckbox">Ghi nhớ đăng nhập</label>
                                 </div>
-                                <span className='forgot-pass'>Quên mật khẩu?</span>
+                                <span className='forgot-pass' onClick={() => { this.props.history.push('/forgot-password') }}>Quên mật khẩu?</span>
                             </div>
 
                             <button

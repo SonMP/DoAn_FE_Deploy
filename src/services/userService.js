@@ -85,6 +85,14 @@ const postChatbot = (data) => {
 const getChatHistory = (userId) => {
     return axios.get(`/api/get-chat-history?userId=${userId}`)
 }
+const postForgotPassword = (email) => {
+    return axios.post('/api/forgot-password', { email });
+}
+
+const postVerifyResetPassword = (data) => {
+    return axios.post('/api/verify-reset-password', data);
+}
+
 export default {
     handleLoginApi,
     registerUserService,
@@ -104,5 +112,7 @@ export default {
     verifyCancelBooking,
     getPatientChatSummary,
     postChatbot,
-    getChatHistory
+    getChatHistory,
+    postForgotPassword,
+    postVerifyResetPassword
 }

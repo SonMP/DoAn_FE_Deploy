@@ -12,6 +12,8 @@ import { path } from '../utils'
 import Home from '../routes/Home';
 import Register from './Auth/Register';
 import Login from '../containers/Auth/Login';
+import ForgotPassword from './Auth/ForgotPassword';
+import ResetPassword from './Auth/ResetPassword';
 import HomeLayout from './HomePage/HomeLayout';
 import System from '../routes/System';
 import Doctor from '../routes/Doctor';
@@ -59,6 +61,8 @@ class App extends Component {
                                 <Route path={path.HOME} exact component={(Home)} />
                                 <Route path={path.REGISTER} component={userIsNotAuthenticated((Register))} />
                                 <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
+                                <Route path={'/forgot-password'} component={userIsNotAuthenticated(ForgotPassword)} />
+                                <Route path={'/reset-password'} component={userIsNotAuthenticated(ResetPassword)} />
                                 <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
 
                                 <Route path={[path.HOMEPAGE, path.DETAIL_DOCTOR, path.LIST_DOCTOR, path.DETAIL_SPECIALTY, path.LIST_SPECIALTY, path.PATIENT, path.SEARCH_BOOKING]} exact>
