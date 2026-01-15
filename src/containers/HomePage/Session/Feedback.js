@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import './Feedback.scss';
 
-// Import ảnh (Bạn thay bằng ảnh thật của bạn)
-import feedbackImg1 from '../../../assets/images/bacsimau.jpg'; // Ảnh khách 1
-import surgeryImg from '../../../assets/images/chuyenkhoa.jpg'; // Ảnh mổ bướu cổ
+import feedbackImg1 from '../../../assets/images/bacsimau.jpg'; 
+import surgeryImg from '../../../assets/images/chuyenkhoa.jpg'; 
 
 class Feedback extends Component {
 
@@ -15,7 +14,6 @@ class Feedback extends Component {
                 <div className="section-container">
                     <div className="feedback-layout">
 
-                        {/* --- CỘT TRÁI: PHẢN HỒI KHÁCH HÀNG (GRID 4 Ô) --- */}
                         <div className="left-content">
                             <div className="section-header">
                                 <span className="title-section">
@@ -24,7 +22,6 @@ class Feedback extends Component {
                             </div>
 
                             <div className="feedback-list">
-                                {/* Feedback 1 */}
                                 <div className="feedback-item">
                                     <div className="avatar" style={{ backgroundImage: `url(${feedbackImg1})` }}></div>
                                     <div className="content">
@@ -35,7 +32,6 @@ class Feedback extends Component {
                                     </div>
                                 </div>
 
-                                {/* Feedback 2 */}
                                 <div className="feedback-item">
                                     <div className="avatar" style={{ backgroundImage: `url(${feedbackImg1})` }}></div>
                                     <div className="content">
@@ -46,7 +42,6 @@ class Feedback extends Component {
                                     </div>
                                 </div>
 
-                                {/* Feedback 3 */}
                                 <div className="feedback-item">
                                     <div className="avatar" style={{ backgroundImage: `url(${feedbackImg1})` }}></div>
                                     <div className="content">
@@ -57,7 +52,6 @@ class Feedback extends Component {
                                     </div>
                                 </div>
 
-                                {/* Feedback 4 */}
                                 <div className="feedback-item">
                                     <div className="avatar" style={{ backgroundImage: `url(${feedbackImg1})` }}></div>
                                     <div className="content">
@@ -70,17 +64,14 @@ class Feedback extends Component {
                             </div>
                         </div>
 
-                        {/* --- CỘT PHẢI: THÔNG TIN BÊN LỀ --- */}
                         <div className="right-content">
 
-                            {/* Khối 1: Mổ bướu cổ */}
                             <div className="info-box surgery-box">
                                 <h3 className="box-title"><FormattedMessage id="feedback.thyroid_title" /></h3>
                                 <p className="box-desc"><FormattedMessage id="feedback.thyroid_desc" /></p>
                                 <div className="box-img" style={{ backgroundImage: `url(${surgeryImg})` }}></div>
                             </div>
 
-                            {/* Khối 2: Danh sách bác sĩ tư vấn */}
                             <div className="info-box doctor-list-box">
                                 <h3 className="box-title bg-blue"><FormattedMessage id="feedback.consulting_doctor" /></h3>
                                 <ul className="list-doctors">

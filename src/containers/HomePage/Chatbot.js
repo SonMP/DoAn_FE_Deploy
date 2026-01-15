@@ -36,7 +36,6 @@ class Chatbot extends Component {
         }
         if (prevProps.userInfo !== this.props.userInfo) {
             if (this.props.userInfo && this.props.userInfo.id) {
-                console.log("Phát hiện User đăng nhập, đang lấy lịch sử chat...");
                 await this.getHistoryFromDb();
             } else {
                 this.setState({
@@ -63,7 +62,9 @@ class Chatbot extends Component {
                     advice: item.advice,
                     doctorName: item.doctorName,
                     specialtyId: item.specialtyId,
-                    doctorId: item.doctorId
+                    doctorId: item.doctorId,
+                    date: item.date,
+                    time: item.time
                 }));
 
                 if (dbMessages.length > 0) {
@@ -127,7 +128,9 @@ class Chatbot extends Component {
                     advice: response.advice,
                     doctorName: response.doctorName,
                     specialtyId: response.specialtyId,
-                    doctorId: response.doctorId
+                    doctorId: response.doctorId,
+                    date: response.date,
+                    time: response.time
                 };
 
                 this.setState({
@@ -157,9 +160,23 @@ class Chatbot extends Component {
         }
     }
 
-    handleViewDoctor = (id) => {
+    handleViewDoctor = (msg) => {
         if (this.props.history) {
-            this.props.history.push(`/detail-doctor/${id}`);
+            let dateTimestamp = new Date().getTime();
+            if (msg.date) {
+                let parts = msg.date.split('/');
+                if (parts.length === 3) {
+                    let isoDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+                    dateTimestamp = new Date(isoDate).getTime();
+                }
+            }
+            this.props.history.push({
+                pathname: `/detail-doctor/${msg.doctorId}`,
+                state: {
+                    targetDate: dateTimestamp,
+                    targetTime: msg.time
+                }
+            });
             this.toggleChat();
         }
     }
@@ -242,7 +259,7 @@ class Chatbot extends Component {
                                             <div className="action-buttons">
                                                 {msg.doctorId && msg.doctorId > 0 && (
                                                     <button className="btn-action primary"
-                                                        onClick={() => this.handleViewDoctor(msg.doctorId)}>
+                                                        onClick={() => this.handleViewDoctor(msg)}>
                                                         Đặt lịch Bác sĩ
                                                     </button>
                                                 )}

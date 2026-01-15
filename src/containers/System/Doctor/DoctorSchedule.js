@@ -27,12 +27,19 @@ class DoctorSchedule extends Component {
         let allDays = this.getArrDays(language);
 
         if (this.props.doctorIdFromParent) {
-            let res = await doctorService.getScheduleDoctorByDate(this.props.doctorIdFromParent, allDays[0].value);
             this.setState({
-                allDays: allDays,
-                allAvailableTime: res.data ? res.data : [],
-                selectedDate: allDays[0].value
-            })
+                allDays: allDays
+            }, async () => {
+                if (this.props.dateFromChatbot) {
+                    await this.autoOpenModalFromChatbot();
+                } else {
+                    let res = await doctorService.getScheduleDoctorByDate(this.props.doctorIdFromParent, allDays[0].value);
+                    this.setState({
+                        allAvailableTime: res.data ? res.data : [],
+                        selectedDate: allDays[0].value
+                    })
+                }
+            });
         }
     }
 
@@ -51,6 +58,40 @@ class DoctorSchedule extends Component {
                 allAvailableTime: res.data ? res.data : [],
                 selectedDate: allDays[0].value
             })
+        }
+
+        if (this.props.dateFromChatbot !== prevProps.dateFromChatbot && this.props.dateFromChatbot) {
+            await this.autoOpenModalFromChatbot();
+        }
+    }
+
+    autoOpenModalFromChatbot = async () => {
+        let { dateFromChatbot, timeFromChatbot, doctorIdFromParent } = this.props;
+
+        if (dateFromChatbot && doctorIdFromParent) {
+            let date = new Date(parseInt(dateFromChatbot)).setHours(0, 0, 0, 0);
+            let res = await doctorService.getScheduleDoctorByDate(doctorIdFromParent, date);
+
+            if (res && res.errCode === 0) {
+                this.setState({
+                    allAvailableTime: res.data ? res.data : [],
+                    selectedDate: date
+                }, () => {
+                    if (timeFromChatbot && this.state.allAvailableTime.length > 0) {
+                        let targetHour = timeFromChatbot.split(':')[0].trim();
+                        if (targetHour.length === 1) targetHour = '0' + targetHour;
+
+                        let found = this.state.allAvailableTime.find(item => {
+                            let timeLabel = item.thoiGianData ? item.thoiGianData.giaTriVi : '';
+                            return timeLabel.startsWith(targetHour);
+                        });
+
+                        if (found) {
+                            this.handleClickScheduleTime(found);
+                        }
+                    }
+                });
+            }
         }
     }
 
@@ -100,18 +141,14 @@ class DoctorSchedule extends Component {
 
     openNearestSchedule = async () => {
         let doctorId = this.props.doctorIdFromParent;
-        let { allDays } = this.state;
-
         let res = await doctorService.getScheduleDates(doctorId);
 
         if (res && res.errCode === 0 && res.data && res.data.length > 0) {
-
             let foundDate = null;
             let foundSchedule = [];
 
             for (let i = 0; i < res.data.length; i++) {
                 let dateDB = res.data[i].ngayHen;
-
                 let dateTimestamp = 0;
 
                 if (typeof dateDB === 'string') {
@@ -131,7 +168,6 @@ class DoctorSchedule extends Component {
                 let availableTime = resTime.data ? resTime.data : [];
 
                 if (availableTime && availableTime.length > 0) {
-
                     if (dateDBObj === todayObj) {
                         let hasTime = this.checkHasValidTime(availableTime);
                         if (hasTime) {
@@ -154,8 +190,6 @@ class DoctorSchedule extends Component {
                     allAvailableTime: foundSchedule
                 });
                 toast.info("Đã chuyển đến lịch trống gần nhất!")
-            } else {
-                console.log("Không tìm thấy ngày phù hợp");
             }
         }
     }
@@ -218,7 +252,7 @@ class DoctorSchedule extends Component {
     }
 
     render() {
-        let { allDays, allAvailableTime, isOpenModalBooking, dataScheduleTimeModal } = this.state;
+        let { allDays, isOpenModalBooking, dataScheduleTimeModal } = this.state;
         let { language, priceDoctor, detailDoctorFromParent } = this.props;
         let availableTimeList = this.getFilterScheduleTime();
         return (
@@ -288,7 +322,7 @@ class DoctorSchedule extends Component {
                                         <span>
                                             <FormattedMessage id="header.detail-doctor.choose" defaultMessage="Chọn" />
                                             <i className="far fa-hand-point-up"></i>
-                                            <FormattedMessage id="header.detail-doctor.book-free" defaultMessage="detail-doctor.book-free" />
+                                            <FormattedMessage id="header.detail-doctor.book-free" defaultMessage="đặt lịch miễn phí" />
                                         </span>
                                     </div>
                                 </>

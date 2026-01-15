@@ -56,7 +56,6 @@ class Login extends Component {
 
             } else {
 
-                // Handle Remember Me
                 if (this.state.rememberMe) {
                     localStorage.setItem('rememberEmail', this.state.username);
                 } else {

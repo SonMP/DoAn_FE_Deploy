@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 import './Navigator.scss';
 
-// --- GIỮ NGUYÊN CÁC CLASS CŨ: MenuGroup, Menu, SubMenu ---
 class MenuGroup extends Component {
     render() {
         const { name, children } = this.props;
@@ -90,7 +89,6 @@ const withRouterInnerRef = (WrappedComponent) => {
     });
 };
 
-// --- CHỈNH SỬA CLASS NAVIGATOR ---
 
 class Navigator extends Component {
     state = {
@@ -133,7 +131,6 @@ class Navigator extends Component {
         outerLoop:
         for (let i = 0; i < menus.length; i++) {
             const group = menus[i];
-            // CHỈ CHECK KHI CÓ MENUS CON
             if (group.menus && group.menus.length > 0) {
                 for (let j = 0; j < group.menus.length; j++) {
                     const menu = group.menus[j];
@@ -165,7 +162,6 @@ class Navigator extends Component {
         };
     };
 
-    // --- PHẦN RENDER QUAN TRỌNG ĐÃ SỬA ---
     render() {
         const { menus, location, onLinkClick } = this.props;
         return (
@@ -173,8 +169,6 @@ class Navigator extends Component {
                 <ul className="navigator-menu list-unstyled">
                     {
                         menus.map((group, groupIndex) => {
-                            // LOGIC 1: Dành cho ADMIN (Giữ nguyên code cũ)
-                            // Nếu có mảng 'menus' bên trong => Render Dropdown như cũ
                             if (group.menus && group.menus.length > 0) {
                                 return (
                                     <Fragment key={groupIndex}>
@@ -209,13 +203,10 @@ class Navigator extends Component {
                                     </Fragment>
                                 );
                             }
-                            // LOGIC 2: Dành cho BÁC SĨ (Mới thêm vào)
-                            // Nếu không có 'menus' con => Render Link trực tiếp
                             else {
                                 return (
                                     <Fragment key={groupIndex}>
                                         <li className="menu-group">
-                                            {/* Tái sử dụng class 'menu-group-name' để giao diện đồng bộ với Admin */}
                                             <Link to={group.link} className="menu-group-name" onClick={onLinkClick} style={{ cursor: 'pointer' }}>
                                                 <FormattedMessage id={group.name} />
                                             </Link>

@@ -70,7 +70,6 @@ class DetailDoctor extends Component {
         let contentHTML = detailDoctor?.thongTinChiTiet?.noiDungHTML || '';
         let address = detailDoctor?.diaChi || 'Phòng khám Đa khoa Quốc tế';
         let avatarUrl = detailDoctor?.hinhAnh || '';
-
         return (
             <div className="doctor-detail-container">
 
@@ -112,6 +111,8 @@ class DetailDoctor extends Component {
                                         detailDoctorFromParent={detailDoctor}
                                         ref={this.scheduleRef}
                                         doctorIdFromDetail={this.state.currentDoctorId}
+                                        dateFromChatbot={this.props.location.state?.targetDate}
+                                        timeFromChatbot={this.props.location.state?.targetTime}
                                     />
                                 </div>
 

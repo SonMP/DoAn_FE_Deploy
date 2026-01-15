@@ -5,13 +5,6 @@ import moment from 'moment';
 import { KeyCodeUtils } from "../../utils";
 import './DatePicker.scss';
 
-// const CustomInput = ({ value, defaultValue, inputRef, onInputChange, onInputBlur, ...props }) => {
-//     return <input {...props} className='custom-form-control custom-date-input' defaultValue={defaultValue} ref={inputRef}
-//         onChange={onInputChange}
-//         onBlur={onInputBlur}
-//     />;
-// };
-
 class DatePicker extends Component {
 
     flatpickrNode = null;
@@ -32,7 +25,6 @@ class DatePicker extends Component {
             const { onChange } = this.props;
             const value = event.target.value;
 
-            // Take the blur event and process the string value
             const valueMoment = moment(value, 'DD/MM/YYYY');
             onChange([valueMoment.toDate(), valueMoment.toDate()]);
         }
