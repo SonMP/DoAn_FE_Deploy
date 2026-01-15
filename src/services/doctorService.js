@@ -4,8 +4,12 @@ const saveDetailDoctorService = (data) => {
     return axios.post('/api/save-infor-doctors', data);
 }
 
-const getAllDoctorsService = () => {
-    return axios.get('/api/get-all-doctors');
+const getAllDoctorsService = (limit, page) => {
+    let url = '/api/get-all-doctors';
+    if (limit && page) {
+        url += `?limit=${limit}&page=${page}`;
+    }
+    return axios.get(url);
 }
 
 const saveBulkScheduleDoctor = (data) => {

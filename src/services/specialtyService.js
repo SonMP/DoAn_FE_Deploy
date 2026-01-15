@@ -1,7 +1,11 @@
 import axios from '../axios';
 
-const getAllSpecialty = () => {
-    return axios.get('/api/get-all-specialties');
+const getAllSpecialty = (limit, page) => {
+    let url = '/api/get-all-specialties';
+    if (limit && page) {
+        url += `?limit=${limit}&page=${page}`;
+    }
+    return axios.get(url);
 }
 
 const createSpecialty = (data) => {
