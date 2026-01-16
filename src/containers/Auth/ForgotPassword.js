@@ -4,12 +4,14 @@ import { push } from "connected-react-router";
 import './ForgotPassword.scss';
 import { userService } from '../../services';
 import { toast } from 'react-toastify';
+import Spinner from 'react-spinkit';
 
 class ForgotPassword extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: ''
+            email: '',
+            isLoading: false
         }
     }
 
@@ -25,12 +27,18 @@ class ForgotPassword extends Component {
             return;
         }
 
-        let res = await userService.postForgotPassword(this.state.email);
-        if (res && res.errCode === 0) {
-            toast.success("Đã gửi email khôi phục. Vui lòng kiểm tra hộp thư!");
-        } else {
-            toast.error(res.message ? res.message : "Có lỗi xảy ra!");
+        this.setState({ isLoading: true });
+        try {
+            let res = await userService.postForgotPassword(this.state.email);
+            if (res && res.errCode === 0) {
+                toast.success("Đã gửi email khôi phục. Vui lòng kiểm tra hộp thư!");
+            } else {
+                toast.error(res.message ? res.message : "Có lỗi xảy ra!");
+            }
+        } catch (e) {
+            toast.error("Có lỗi xảy ra khi gửi email!");
         }
+        this.setState({ isLoading: false });
     }
 
     handleBack = () => {
@@ -55,8 +63,13 @@ class ForgotPassword extends Component {
                             />
                         </div>
                         <div className="col-12 text-center">
-                            <button className="btn-send-email" onClick={() => this.handleSendEmail()}>
-                                Gửi yêu cầu
+                            <button
+                                className="btn-send-email"
+                                onClick={() => this.handleSendEmail()}
+                                disabled={this.state.isLoading}
+                            >
+                                {this.state.isLoading && <i className="fas fa-spinner fa-spin"></i>}
+                                {this.state.isLoading ? 'Đang gửi...' : 'Gửi yêu cầu'}
                             </button>
                         </div>
                         <div className="col-12 text-center mt-3">

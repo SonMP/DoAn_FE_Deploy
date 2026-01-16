@@ -5,13 +5,15 @@ import './ForgotPassword.scss'; // Reuse styles
 import { userService } from '../../services';
 import { toast } from 'react-toastify';
 import { withRouter } from 'react-router';
+import Spinner from 'react-spinkit';
 
 class ResetPassword extends Component {
     constructor(props) {
         super(props);
         this.state = {
             newPassword: '',
-            token: ''
+            token: '',
+            isLoading: false
         }
     }
 
@@ -38,17 +40,23 @@ class ResetPassword extends Component {
             return;
         }
 
-        let res = await userService.postVerifyResetPassword({
-            token: this.state.token,
-            newPassword: this.state.newPassword
-        });
+        this.setState({ isLoading: true });
+        try {
+            let res = await userService.postVerifyResetPassword({
+                token: this.state.token,
+                newPassword: this.state.newPassword
+            });
 
-        if (res && res.errCode === 0) {
-            toast.success("Đặt lại mật khẩu thành công!");
-            this.props.history.push('/login');
-        } else {
-            toast.error(res.message ? res.message : "Có lỗi xảy ra!");
+            if (res && res.errCode === 0) {
+                toast.success("Đặt lại mật khẩu thành công!");
+                this.props.history.push('/login');
+            } else {
+                toast.error(res.message ? res.message : "Có lỗi xảy ra!");
+            }
+        } catch (e) {
+            toast.error("Có lỗi xảy ra khi đặt lại mật khẩu!");
         }
+        this.setState({ isLoading: false });
     }
 
     render() {
@@ -67,8 +75,13 @@ class ResetPassword extends Component {
                             />
                         </div>
                         <div className="col-12 text-center">
-                            <button className="btn-send-email" onClick={() => this.handleReset()}>
-                                Xác nhận
+                            <button
+                                className="btn-send-email"
+                                onClick={() => this.handleReset()}
+                                disabled={this.state.isLoading}
+                            >
+                                {this.state.isLoading && <i className="fas fa-spinner fa-spin"></i>}
+                                {this.state.isLoading ? 'Đang gửi...' : 'Xác nhận'}
                             </button>
                         </div>
                     </div>

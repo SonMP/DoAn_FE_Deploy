@@ -62,7 +62,7 @@ class App extends Component {
                                 <Route path={path.REGISTER} component={userIsNotAuthenticated((Register))} />
                                 <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
                                 <Route path={'/forgot-password'} component={userIsNotAuthenticated(ForgotPassword)} />
-                                <Route path={'/reset-password'} component={userIsNotAuthenticated(ResetPassword)} />
+                                <Route path={'/reset-password'} component={(ResetPassword)} />
                                 <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
 
                                 <Route path={[path.HOMEPAGE, path.DETAIL_DOCTOR, path.LIST_DOCTOR, path.DETAIL_SPECIALTY, path.LIST_SPECIALTY, path.PATIENT, path.SEARCH_BOOKING]} exact>
