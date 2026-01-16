@@ -18,9 +18,13 @@ class ResetPassword extends Component {
     }
 
     componentDidMount() {
-        // Extract token from URL
+        console.log("ResetPassword props:", this.props);
+        console.log("Location:", this.props.location);
+
         let search = new URLSearchParams(this.props.location.search);
         let token = search.get("token");
+        console.log("Extracted Token:", token);
+
         if (token) {
             this.setState({ token: token });
         } else {
